@@ -51,11 +51,37 @@ function goNextStatement(){
     x++;
     if(x >= subjects.length){
         compareStatement();
-        showResult();
+        chooseParties();
     }else{
         title.innerHTML = subjects[x].title;
         description.innerHTML = subjects[x].statement;
     }
+}
+
+function chooseParties(){
+    startKnop.style.display = 'none';
+    skipKnop.style.display = 'none';
+    title.innerHTML = "Welke soort partijen wil je meenemen in het resultaat?";
+    eensKnop.innerHTML = "zittende partijen";
+    oneensKnop.innerHTML = "seculiere partijen";
+    idkKnop.innerHTML = "alle partijen";
+    eensKnop.onclick = function() {mainParties()};
+    oneensKnop.onclick = function() {sideParties()};
+    idkKnop.onclick = function() {allParties()};
+}
+
+function mainParties(){
+    const selectedParties = parties.filter(party => party.size > 0);
+
+    console.log(selectedParties);
+}
+
+function sideParties(){
+
+}
+
+function allParties(){
+
 }
 
 function compareStatement(){
@@ -71,7 +97,4 @@ function compareStatement(){
 }
 
 function showResult(){
-    for(c = 0; c < parties.length; c++){
-        document.write(parties[c].name, " ", parties[c].score+ "<br>");
-    }
 }
