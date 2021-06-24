@@ -5,8 +5,10 @@ var eensKnop = document.getElementById("eensKnop");
 var skipKnop = document.getElementById("skipKnop");
 var title = document.getElementById("title");
 var description = document.getElementById("description");
+var importantList = document.getElementById('vragenlijst');
 var x = 0;
 var antwoorden = [];
+var questions = 30;
 
 idkKnop.style.display = 'none';
 oneensKnop.style.display = 'none';
@@ -43,7 +45,7 @@ function idk(){
 }
 
 function skip(){
-    antwoorden[x] = "undefined";
+    questions--;
     goNextStatement();
 }
 
@@ -61,6 +63,7 @@ function goNextStatement(){
 function chooseParties(){
     startKnop.style.display = 'none';
     skipKnop.style.display = 'none';
+    description.style.display = 'none';
     title.innerHTML = "Welke soort partijen wil je meenemen in het resultaat?";
     eensKnop.innerHTML = "zittende partijen";
     oneensKnop.innerHTML = "seculiere partijen";
@@ -71,17 +74,51 @@ function chooseParties(){
 }
 
 function mainParties(){
-    const selectedParties = parties.filter(party => party.size > 0);
+    var selectedParties = parties.filter(party => party.size > 0);
 
-    console.log(selectedParties);
+    chooseStatement();
 }
 
 function sideParties(){
+    var selectedParties = parties.filter(party => party.size < 1);
 
+    chooseStatement();
 }
 
 function allParties(){
+    var selectedParties = parties;
 
+    chooseStatement();
+}
+
+function chooseStatement(){
+    oneensKnop.style.display = 'none';
+    idkKnop.style.display = 'none';
+    title.innerHTML = "Zijn er onderwerpen die u extra belangrijk vindt?";
+    eensKnop.innerHTML = "Ga verder";
+    generateList();
+    eensKnop.onclick = function() {showResult()};
+}
+
+function generateList(){
+    for(y = 0; y < subjects.length; y++){
+        var li = document.createElement("li");
+        var t = document.createTextNode(subjects[y].title);
+        var checkBox = document.createElement("input");
+        checkBox.setAttribute("type", "checkbox");
+        checkBox.setAttribute("subjectIndex", y);
+        li.appendChild(checkBox);
+        li.appendChild(t);
+        document.getElementById("vragenlijst").appendChild(li);
+    }
+
+}
+
+function readList(){
+    var importantList = document.querySelectorAll('#vragenlijst li');
+    for(i = 0; i < importantList.length; i++){
+        subjects[i].important = importantList[i].checked;
+    }
 }
 
 function compareStatement(){
@@ -97,4 +134,8 @@ function compareStatement(){
 }
 
 function showResult(){
+    readList();
+    for(i = 0; i < subjects.length; i++){
+        console.log(importantList[i]);
+    }
 }
