@@ -52,7 +52,6 @@ function skip(){
 function goNextStatement(){
     x++;
     if(x >= subjects.length){
-        compareStatement();
         chooseParties();
     }else{
         title.innerHTML = subjects[x].title;
@@ -115,9 +114,10 @@ function generateList(){
 }
 
 function readList(){
-    var importantList = document.querySelectorAll('#vragenlijst li');
+    var importantList = document.querySelectorAll('#vragenlijst li input');
     for(i = 0; i < importantList.length; i++){
         subjects[i].important = importantList[i].checked;
+        console.log(importantList[i].checked)
     }
 }
 
@@ -126,6 +126,11 @@ function compareStatement(){
         for(a = 0; a < parties.length; a++){
             if(antwoorden[b] == subjects[b].parties[a].position){
                 parties[a].score++;
+                if(subjects[b].important == true){
+                    parties[a].score++;
+                }else{
+                    parties[a].score + 0;
+                }
             }else if(antwoorden[b] == "undefined"){
                 parties[a].score + 0;
             }
@@ -135,7 +140,8 @@ function compareStatement(){
 
 function showResult(){
     readList();
-    for(i = 0; i < subjects.length; i++){
-        console.log(importantList[i]);
+    compareStatement();
+    for(e = 1; e < subjects.length; e++){
+        console.log(parties[e].score);
     }
 }
