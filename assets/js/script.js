@@ -117,7 +117,7 @@ function readList(){
     var importantList = document.querySelectorAll('#vragenlijst li input');
     for(i = 0; i < importantList.length; i++){
         subjects[i].important = importantList[i].checked;
-        console.log(importantList[i].checked)
+        questions++;
     }
 }
 
@@ -141,7 +141,18 @@ function compareStatement(){
 function showResult(){
     readList();
     compareStatement();
-    for(e = 1; e < subjects.length; e++){
-        console.log(parties[e].score);
+    eensKnop.style.display = 'none';
+    vragenlijst.style.display = 'none';
+    description.style.display = 'inline';
+    title.innerHTML = "Hier zijn uw resultaten";
+    description.innerHTML = "";
+    for(e = 0; e <= parties.length - 1; e++){
+        var result = Math.round((parties[e].score / questions) * 100);
+        var li = document.createElement("li");
+        var p = document.createTextNode(parties[e].name);
+        var t = document.createTextNode(result);
+        li.appendChild(p);
+        li.appendChild(t);
+        document.getElementById("description").appendChild(li);
     }
 }

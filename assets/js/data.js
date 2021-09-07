@@ -1,145 +1,145 @@
 
 var parties = [{
-    name: "VVD",
+    name: "VVD ",
     secular: true,
     size: 33,
     long: "Volkspartij voor Vrijheid en Democratie",
     score: 0
   },
   {
-    name: "CDA",
+    name: "CDA ",
     secular: false,
     size: 19,
     long: "Christen Democratisch Appel",
     score: 0
   },
   {
-    name: "PVV",
+    name: "PVV ",
     secular: true,
     size: 20,
     long: "Partij voor de Vrijheid",
     score: 0
   },
   {
-    name: "D66",
+    name: "D66 ",
     secular: true,
     size: 19,
     long: "Democratie 66",
     score: 0
   },
   {
-    name: "GroenLinks",
+    name: "GroenLinks ",
     secular: true,
     size: 14,
     score: 0
   },
   {
-    name: "SP",
+    name: "SP ",
     secular: true,
     size: 14,
     long: "Socialistische Partij",
     score: 0
   },
   {
-    name: "PvdA",
+    name: "PvdA ",
     secular: true,
     size: 9,
     long: "Partij van de Arbeid",
     score: 0
   },
   {
-    name: "ChristenUnie",
+    name: "ChristenUnie ",
     secular: false,
     size: 5,
     score: 0
   },
   {
-    name: "Partij voor de Dieren",
+    name: "Partij voor de Dieren ",
     secular: true,
     size: 33,
     score: 0
   },
   {
-    name: "SGP",
+    name: "SGP ",
     secular: false,
     size: 33,
     long: "Staatkundig Gerefomeerde Partij",
     score: 0
   },
   {
-    name: "DENK",
+    name: "DENK ",
     secular: true,
     size: 3,
     score: 0
   },
   {
-    name: "Forum voor Democratie",
+    name: "Forum voor Democratie ",
     secular: true,
     size: 2,
     score: 0
   },
   {
-    name: "Lokaal in de Kamer",
+    name: "Lokaal in de Kamer ",
     secular: true,
     size: 0,
     score: 0
   },
   {
-    name: "OndernemersPartij",
+    name: "OndernemersPartij ",
     secular: true,
     size: 0,
     score: 0
   },
   {
-    name: "VNL",
+    name: "VNL ",
     secular: true,
     size: 0,
     score: 0
   },
   {
-    name: "Nieuwe Wegen",
+    name: "Nieuwe Wegen ",
     secular: true,
     size: 0,
     score: 0
   },
   {
-    name: "De Burger Beweging",
+    name: "De Burger Beweging ",
     secular: true,
     size: 0,
     score: 0
   },
   {
-    name: "Piratenpartij",
+    name: "Piratenpartij ",
     secular: true,
     size: 0,
     score: 0
   },
   {
-    name: "Artikel 1",
+    name: "Artikel 1 ",
     secular: true,
     size: 0,
     score: 0
   },
   {
-    "name": "50Plus",
+    "name": "50Plus ",
     "secular": true,
     "size": 2,
     score: 0
   },
   {
-    "name": "Vrijzinnige Partij",
+    "name": "Vrijzinnige Partij ",
     "secular": true,
     "size": 0,
     score: 0
   },
   {
-    "name": "Libertarische Partij",
+    "name": "Libertarische Partij ",
     "secular": true,
     "size": 0,
     score: 0
   },
   {
-    "name": "Niet Stemmers",
+    "name": "Niet Stemmers ",
     "secular": true,
     "size": 0,
     score: 0
